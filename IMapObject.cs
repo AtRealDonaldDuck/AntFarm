@@ -1,5 +1,5 @@
 ﻿namespace AntFarm {
-    public interface IMapEntity {
+    public interface IMapObject {
         public char Icon { get; }
     }
 }

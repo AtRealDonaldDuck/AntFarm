@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AntFarm {
-    internal class Entity : IMapEntity {
+    internal class Tile : IMapObject {
         public char Icon { get; private set; }
 
-        public Entity(char icon) {
+        public Tile(char icon) {
             Icon = icon;
         }
+
+        public static Tile Empty => new(' ');
     }
 }
