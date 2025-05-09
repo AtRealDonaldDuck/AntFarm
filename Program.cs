@@ -3,9 +3,9 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AntFarm {
     internal class Program {
-        static Map map;
+        public static Map map;
         public static readonly Random rng = new Random();
-        static readonly List<IActor> ants = new();
+        public static readonly List<IActor> ants = new();
 
         static void Main(string[] args) {
             var (cursorOriginLeft, cursorOriginTop) = Console.GetCursorPosition();
@@ -61,11 +61,11 @@ namespace AntFarm {
             return sb.ToString();
         }
         public static Vector2[] GetValidMoveDirections(Map map, Vector2 origin) {
-            var allDirections = new Vector2[] { new(1, 0), new(-1, 0), new(0, 1), new(0, -1) };
-            var filteredDirections = allDirections.Where(dir
+            var directions = new Vector2[] { new(1, 0), new(-1, 0), new(0, 1), new(0, -1) }.AsQueryable();//start with every possible move direction
+            directions = directions.Where(dir
                 => (origin.x + dir.x >= 0 && origin.y + dir.y >= 0)
-                && (origin.x + dir.x < map.Width && origin.y + dir.y < map.Height)).ToArray();//remove any tiles that are out of map bounds
-            return filteredDirections;
+                && (origin.x + dir.x < map.Width && origin.y + dir.y < map.Height));//remove tiles that are out of bounds
+            return directions.ToArray();
         }
     }
 }
