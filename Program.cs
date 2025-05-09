@@ -23,9 +23,9 @@ namespace AntFarm {
 
                 //display ant farm
                 Console.SetCursorPosition(cursorOriginLeft, cursorOriginTop);
-                Console.WriteLine(GetWorldString());
+                 Console.WriteLine(GetWorldString());
 
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
             }
         }
 
@@ -54,7 +54,7 @@ namespace AntFarm {
                     sb.Append(map[i, j].Icon);
                 sb.AppendLine();
             }
-            foreach (Ant ant in ants) {
+            foreach (var ant in ants) {
                 var stringIndex = ant.Position.x + ((map.Width * ant.Position.y) + (2 * ant.Position.y));
                 sb[stringIndex] = ant.Icon;
             }

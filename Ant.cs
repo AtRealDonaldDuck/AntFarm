@@ -1,5 +1,5 @@
 ﻿namespace AntFarm {
-    class Ant : IMapObject, IActor {
+    class Ant : IActor {
         public char Icon { get; }
         public Vector2 Position { get; set; }
 
