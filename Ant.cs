@@ -3,8 +3,9 @@
         public char Icon { get; }
         public Vector2 Position { get; set; }
 
-        public Ant(char icon) {
-            Icon = icon;
+        public Ant(Vector2 position) {
+            Icon = 'A';
+            Position = position;
         }
 
         public void Act(Map map) {

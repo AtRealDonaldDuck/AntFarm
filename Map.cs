@@ -1,6 +1,9 @@
 ﻿using System.Text;
 
 namespace AntFarm {
+    /// <summary>
+    /// The map stores all the worlds tiles, it's not meant to store the locations of actors and entities
+    /// </summary>
     class Map {
         Tile[,] tileMatrix;
         public int Width => tileMatrix.GetLength(1);
