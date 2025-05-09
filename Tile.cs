@@ -8,10 +8,11 @@ namespace AntFarm {
     internal class Tile : IMapObject {
         public char Icon { get; private set; }
 
-        public Tile(char icon) {
+        private Tile(char icon) {
             Icon = icon;
         }
 
         public static Tile Empty => new(' ');
+        public static Tile Dirt => new('█');
     }
 }

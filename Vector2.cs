@@ -4,6 +4,7 @@
         public int y = y;
 
         public static Vector2 operator +(Vector2 a, Vector2 b) => new Vector2(a.x + b.x, a.y + b.y);
+        public static Vector2 operator -(Vector2 a, Vector2 b) => new Vector2(a.x - b.x, a.y - b.y);
 
         public static Vector2 GetRandomMoveDirection() => (new Random().Next(4)) switch {
             0 => new Vector2(1, 0),//right

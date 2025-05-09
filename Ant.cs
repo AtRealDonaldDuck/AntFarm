@@ -1,15 +1,17 @@
 ﻿namespace AntFarm {
-    class Ant : IMapObject {
+    class Ant : IMapObject, IActor {
         public char Icon { get; }
-        public Vector2 Position { get; private set; }
+        public Vector2 Position { get; set; }
+
         public Ant(char icon) {
             Icon = icon;
         }
 
         public void Act(Map map) {
             var moveDirections = GetValidRandomMoveDirection(map);
-            Position += moveDirections[new Random().Next(moveDirections.Length)];
-            map[Position] = Tile.Empty;
+            var selectedDirection = moveDirections[new Random().Next(moveDirections.Length)];
+            this.Dig(selectedDirection, map);
+            this.Move(selectedDirection, map);
         }
 
         Vector2[] GetValidRandomMoveDirection(Map map) => Program.GetValidMoveDirections(map, Position);

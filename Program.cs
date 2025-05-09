@@ -2,7 +2,7 @@
 
 namespace AntFarm {
     internal class Program {
-        static Map map = new Map(70, 25, new Tile('█'));//the map only stores tiles that ants walk on
+        static Map map = new Map(70, 25, Tile.Dirt);//the map only stores tiles that ants walk on
         static Ant ant = new Ant('A');
 
         static void Main(string[] args) {
