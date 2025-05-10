@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel;
+using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AntFarm {
@@ -8,6 +9,11 @@ namespace AntFarm {
         public static readonly List<IActor> ants = new();
 
         static void Main(string[] args) {
+            //To Do
+            //make the base program work with only interfaces, so that i can start making a library of different farm configurations that i can easily swap and play around with
+            //Add a AimlessDiggers farm that is just what the current configuration of the farm looks like
+            //Add a HungryQueen farm, map is the same as AimlessDiggers, but food pellets are spawned in random places in the map, and a type of ant called a queen is spawned, the queen requires 1 food to create an ant, ants dig aimlessly till they find food, when they do theyll bring the food back to a pile for their queen,every bunch of ticks the queen eats one food to stay alive, if the queen needs food and cant eat, it dies and the game ends
+
             var (cursorOriginLeft, cursorOriginTop) = Console.GetCursorPosition();
 
             //Create map
