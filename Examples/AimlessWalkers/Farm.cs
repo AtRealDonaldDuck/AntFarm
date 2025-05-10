@@ -2,7 +2,7 @@
 using AntFarm.Util;
 using System.Text;
 
-namespace AntFarm.Examples.AimlessWalkers {
+namespace AimlessWalkers {
     public class Farm : IFarm {
         internal readonly Map map;
         internal readonly Ant[] ants;

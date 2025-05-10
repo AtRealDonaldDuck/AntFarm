@@ -1,6 +1,6 @@
 ﻿using Vector2 = AntFarm.Util.Vector2;
 
-namespace AntFarm.Examples.AimlessWalkers {
+namespace AimlessWalkers {
     internal static class Actions {
         public static void Move(this Ant ant, Vector2 direction, Farm farm) {
             if (!farm.ValidatePosition(ant.Position + direction))

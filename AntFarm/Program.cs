@@ -1,4 +1,4 @@
-﻿using AntFarm.Examples.AimlessWalkers;
+﻿using AimlessWalkers;
 using AntFarm.Interfaces;
 
 namespace AntFarm {

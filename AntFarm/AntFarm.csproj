@@ -10,6 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\AntFarm.Interfaces\AntFarm.Interfaces.csproj" />
     <ProjectReference Include="..\AntFarm.Util\AntFarm.Util.csproj" />
-    <ProjectReference Include="..\Examples\AimlessWalkers\AntFarm.Examples.AimlessWalkers.csproj" />
+    <ProjectReference Include="..\Examples\AimlessWalkers\AimlessWalkers.csproj" />
   </ItemGroup>
 </Project>

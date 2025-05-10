@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntFarm.Interfaces", "AntFa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntFarm.Util", "AntFarm.Util\AntFarm.Util.csproj", "{E723B2CB-8A31-49ED-8933-075BE494677F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntFarm.Examples.AimlessWalkers", "Examples\AimlessWalkers\AntFarm.Examples.AimlessWalkers.csproj", "{FDC3B623-4B6A-49B4-9FA5-B0772491FF68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AimlessWalkers", "Examples\AimlessWalkers\AimlessWalkers.csproj", "{EFFBD463-8DE9-4F7D-BD5F-528BF3AFF778}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{E723B2CB-8A31-49ED-8933-075BE494677F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E723B2CB-8A31-49ED-8933-075BE494677F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E723B2CB-8A31-49ED-8933-075BE494677F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FDC3B623-4B6A-49B4-9FA5-B0772491FF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDC3B623-4B6A-49B4-9FA5-B0772491FF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDC3B623-4B6A-49B4-9FA5-B0772491FF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDC3B623-4B6A-49B4-9FA5-B0772491FF68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFFBD463-8DE9-4F7D-BD5F-528BF3AFF778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFFBD463-8DE9-4F7D-BD5F-528BF3AFF778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFFBD463-8DE9-4F7D-BD5F-528BF3AFF778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFFBD463-8DE9-4F7D-BD5F-528BF3AFF778}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

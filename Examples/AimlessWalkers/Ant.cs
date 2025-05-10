@@ -1,7 +1,7 @@
 ﻿using AntFarm.Interfaces;
 using Vector2 = AntFarm.Util.Vector2;
 
-namespace AntFarm.Examples.AimlessWalkers {
+namespace AimlessWalkers {
     internal class Ant : IActor {
         public char Icon { get; }
         public Vector2 Position { get; set; }

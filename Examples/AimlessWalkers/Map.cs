@@ -1,7 +1,7 @@
 ﻿using AntFarm.Interfaces;
 using AntFarm.Util;
 
-namespace AntFarm.Examples.AimlessWalkers {
+namespace AimlessWalkers {
     internal class Map : IMap {
         Tile[,] tileMatrix;
         public int Width => tileMatrix.GetLength(0);
