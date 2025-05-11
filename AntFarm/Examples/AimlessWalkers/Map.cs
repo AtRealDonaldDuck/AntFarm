@@ -1,31 +1,34 @@
 ﻿using AntFarm.Interfaces;
 using AntFarm.Util;
+using System.ComponentModel;
 
 namespace AntFarm.Examples.AimlessWalkers {
     internal class Map : IMap {
-        Tile[,] tileMatrix;
-        public int Width => tileMatrix.GetLength(0);
-        public int Height => tileMatrix.GetLength(1);
+        readonly Dictionary<Vector2, Tile> tiles;
+        public readonly int Width;
+        public readonly int Height;
 
+        public Map(int width, int height) {
+            Width = width;
+            Height = height;
+            tiles = new Dictionary<Vector2, Tile>();
 
-        public Map(int width, int height, Tile emptySpace) {
-            tileMatrix = new Tile[width, height];
-            for (int i = 0; i < tileMatrix.GetLength(0); i++)
-                for (int j = 0; j < tileMatrix.GetLength(1); j++)
-                    tileMatrix[i, j] = emptySpace;
+            for (int x = 0; x < Width; x++)
+                for (int y = 0; y < Height; y++) {
+                    var position = new Vector2(x, y);
+                    var tile = new Tile(Tile.Types.Dirt);
+                    tile.Position = position;
+                    tiles.Add(position, tile);
+                }
         }
 
         public Tile this[int x, int y] {
-            get => tileMatrix[x, y];
-            set => tileMatrix[x, y] = value;
+            get => tiles[new Vector2(x, y)];
+            set => tiles[new Vector2(x, y)] = value;
         }
 
-
-        public IObject GetObjectAt(int x, int y) => this[x, y];
-
-        public bool LocationExists(Vector2 position)
-            => position.x >= 0 && position.y >= 0
-            && position.x < Width && position.y < Height;//if position is negative or larger than the worlds boundaries then the position doesnt exist
+        public IEnumerable<Tile> GetAllTiles() => tiles.Values;
+        public bool LocationExists(Vector2 position) => tiles.ContainsKey(position);
 
     }
 }

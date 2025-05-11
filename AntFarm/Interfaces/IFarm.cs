@@ -1,6 +1,6 @@
 ﻿namespace AntFarm.Interfaces {
     public interface IFarm {
         public void Update();
-        public string GetWorldString();
+        public IEnumerable<IObject> GetObjects();
     }
 }

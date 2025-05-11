@@ -9,7 +9,7 @@ namespace AntFarm.Examples.AimlessWalkers {
         }
         public static void Dig(this Ant ant, Vector2 direction, Farm farm) {
             var targetLoc = ant.Position + direction;
-            farm.map[targetLoc.x, targetLoc.y] = Tile.Empty;
+            farm.map[targetLoc.x, targetLoc.y].ChangeType(Tile.Types.Empty);
         }
     }
 }

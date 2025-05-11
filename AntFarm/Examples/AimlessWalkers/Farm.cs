@@ -9,7 +9,7 @@ namespace AntFarm.Examples.AimlessWalkers {
         internal readonly Random rng;
 
         public Farm(int antCount = 4, int width = 70, int height = 25, int? rngSeed = null) {
-            map = new Map(width, height, Tile.Dirt);
+            map = new Map(width, height);
             rng = rngSeed == null ? new Random() : new Random(rngSeed.Value);
             ants = CreateAnts(antCount);
         }
@@ -19,21 +19,6 @@ namespace AntFarm.Examples.AimlessWalkers {
             foreach (var ant in ants)
                 ant.Act(this);
         }
-
-        public string GetWorldString() {
-            var sb = new StringBuilder();
-            for (int i = 0; i < map.Height; i++) {
-                for (int j = 0; j < map.Width; j++)
-                    sb.Append(map[j, i].Icon);
-                sb.AppendLine();
-            }
-            foreach (var ant in ants) {
-                var stringIndex = ant.Position.x + map.Width * ant.Position.y + 2 * ant.Position.y;
-                sb[stringIndex] = ant.Icon;
-            }
-            return sb.ToString();
-        }
-
         Ant[] CreateAnts(int count) {
             var antList = new List<Ant>();
             //selects random locations where there arent already any ants and places an ant there
@@ -49,7 +34,7 @@ namespace AntFarm.Examples.AimlessWalkers {
                     else throw new Exception($"Could not find siutable locations to spawn {count} ants");
                 } while (antList.Any(ant => ant.Position == antSpawnPosition));//ensure no ants are spawned over eachother
 
-                map[antSpawnPosition.x, antSpawnPosition.y] = Tile.Empty;
+                map[antSpawnPosition.x, antSpawnPosition.y].ChangeType(Tile.Types.Empty);
                 antList.Add(new Ant(antSpawnPosition));
             }
             return antList.ToArray();
@@ -63,5 +48,7 @@ namespace AntFarm.Examples.AimlessWalkers {
         }
 
         internal bool ValidatePosition(Vector2 position) => map.LocationExists(position);
+
+        public IEnumerable<IObject> GetObjects() => (map.GetAllTiles() as IEnumerable<IObject>).Concat(ants);
     }
 }

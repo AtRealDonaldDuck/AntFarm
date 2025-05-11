@@ -5,15 +5,17 @@ namespace AntFarm {
 
         static void Main(string[] args) {
             var (cursorOriginLeft, cursorOriginTop) = Console.GetCursorPosition();
+            Console.CursorVisible = false;
 
             //initialize farm
-            IFarm farm = new AntFarm.Examples.AimlessWalkers.Farm(5, 180, 60);
-            IFarmDisplayer displayer = new ConsoleFarmDisplayer(cursorOriginLeft, cursorOriginTop);
+            IFarm farm = new AntFarm.Examples.AimlessWalkers.Farm(4, 70, 18);
+            var displayer = new ConsoleFarmDisplayer(cursorOriginLeft, cursorOriginTop);
 
             //start logic loop
             while (true) {
                 farm.Update();
-                displayer.Display(farm);
+                var displayCommands = ConsoleDisplayerCommandListFactory.Create(farm);
+                displayer.Display(displayCommands);
                 Thread.Sleep(500);
             }
         }

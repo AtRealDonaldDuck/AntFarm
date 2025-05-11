@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HungryQueen {
-    internal class Farm : IFarm {
+    internal class Farm {
         //maps initially populated with dirt, food placed randomly on initialization
         //random location chosen to place queens chamber and spawn queen there
 
