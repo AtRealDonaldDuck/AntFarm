@@ -1,7 +1,7 @@
 ﻿using AntFarm.Interfaces;
 using AntFarm.Util;
 
-namespace AimlessWalkers {
+namespace AntFarm.Examples.AimlessWalkers {
     internal class Map : IMap {
         Tile[,] tileMatrix;
         public int Width => tileMatrix.GetLength(0);
@@ -24,8 +24,8 @@ namespace AimlessWalkers {
         public IMapObject GetObjectAt(int x, int y) => this[x, y];
 
         public bool LocationExists(Vector2 position)
-            => (position.x >= 0 && position.y >= 0)
-            && (position.x < Width && position.y < Height);//if position is negative or larger than the worlds boundaries then the position doesnt exist
+            => position.x >= 0 && position.y >= 0
+            && position.x < Width && position.y < Height;//if position is negative or larger than the worlds boundaries then the position doesnt exist
 
     }
 }

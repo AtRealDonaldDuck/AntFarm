@@ -2,7 +2,7 @@
 using AntFarm.Util;
 using System.Text;
 
-namespace AimlessWalkers {
+namespace AntFarm.Examples.AimlessWalkers {
     public class Farm : IFarm {
         internal readonly Map map;
         internal readonly Ant[] ants;
@@ -28,7 +28,7 @@ namespace AimlessWalkers {
                 sb.AppendLine();
             }
             foreach (var ant in ants) {
-                var stringIndex = ant.Position.x + ((map.Width * ant.Position.y) + (2 * ant.Position.y));
+                var stringIndex = ant.Position.x + map.Width * ant.Position.y + 2 * ant.Position.y;
                 sb[stringIndex] = ant.Icon;
             }
             return sb.ToString();

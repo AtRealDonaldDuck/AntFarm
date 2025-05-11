@@ -1,7 +1,7 @@
 ﻿using AntFarm.Interfaces;
 using Vector2 = AntFarm.Util.Vector2;
 
-namespace AimlessWalkers {
+namespace AntFarm.Examples.AimlessWalkers {
     internal class Ant : IActor {
         public char Icon { get; }
         public Vector2 Position { get; set; }
@@ -19,7 +19,7 @@ namespace AimlessWalkers {
                 throw new Exception($"unhandled error: {nameof(moveDirections)} has 0 elements meaning {this} could not find a single valid place to move to");
 
             //select next action
-            var selectedDirection = moveDirections[farm.rng.Next(moveDirections.Length)];
+            Vector2 selectedDirection = moveDirections[farm.rng.Next(moveDirections.Length)];
 
             //act
             this.Dig(selectedDirection, farm);

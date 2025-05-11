@@ -1,5 +1,4 @@
-﻿using AimlessWalkers;
-using AntFarm.Interfaces;
+﻿using AntFarm.Interfaces;
 
 namespace AntFarm {
     internal class Program {
@@ -9,7 +8,7 @@ namespace AntFarm {
             var (cursorOriginLeft, cursorOriginTop) = Console.GetCursorPosition();
 
             //initialize farm
-            farm = new Farm();
+            farm = new AntFarm.Examples.AimlessWalkers.Farm(5, 180, 60);
 
             //start logic loop
             while (true) {

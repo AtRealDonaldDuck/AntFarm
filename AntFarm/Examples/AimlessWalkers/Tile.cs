@@ -1,6 +1,6 @@
 ﻿using AntFarm.Interfaces;
 
-namespace AimlessWalkers {
+namespace AntFarm.Examples.AimlessWalkers {
     internal class Tile : IMapObject {
         public char Icon { get; private set; }
 
