@@ -1,7 +1,7 @@
 ﻿using AntFarm.Interfaces;
 
 namespace AntFarm.Examples.AimlessWalkers {
-    internal class Tile : IMapObject {
+    internal class Tile : IObject {
         public char Icon { get; private set; }
 
         private Tile(char icon) {

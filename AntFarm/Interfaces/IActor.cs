@@ -1,4 +1,4 @@
 ﻿namespace AntFarm.Interfaces {
-    public interface IActor : IMapObject {
+    public interface IActor : IObject {
     }
 }

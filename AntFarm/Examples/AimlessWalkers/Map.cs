@@ -21,7 +21,7 @@ namespace AntFarm.Examples.AimlessWalkers {
         }
 
 
-        public IMapObject GetObjectAt(int x, int y) => this[x, y];
+        public IObject GetObjectAt(int x, int y) => this[x, y];
 
         public bool LocationExists(Vector2 position)
             => position.x >= 0 && position.y >= 0
