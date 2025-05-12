@@ -35,7 +35,6 @@ namespace AntFarm {
             string displayString = finalStringBuilder.ToString();
 
             //output parsed commands
-            Console.Clear();
             Console.SetCursorPosition(consoleCursorAnchorLeft, consoleCursorAnchorTop);
             Console.WriteLine(displayString);
         }
