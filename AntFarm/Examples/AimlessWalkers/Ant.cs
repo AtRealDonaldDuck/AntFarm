@@ -1,4 +1,5 @@
 ﻿using AntFarm.Interfaces;
+using AntFarm.Util;
 using Vector2 = AntFarm.Util.Vector2;
 
 namespace AntFarm.Examples.AimlessWalkers {
@@ -13,13 +14,21 @@ namespace AntFarm.Examples.AimlessWalkers {
 
         public void Act(Farm farm) {
             //get valid movement options
-            var moveDirections = farm.GetValidMoveDirections(Position);
+            var validDirections = farm.GetValidMoveDirections(Position);
 
-            if (moveDirections.Length == 0)
-                throw new Exception($"unhandled error: {nameof(moveDirections)} has 0 elements meaning {this} could not find a single valid place to move to");
+            if (validDirections.Length == 0)
+                throw new Exception($"unhandled error: {nameof(validDirections)} has 0 elements meaning {this} could not find a single valid place to move to");
 
-            //select next action
-            Vector2 selectedDirection = moveDirections[farm.rng.Next(moveDirections.Length)];
+            //select next direction
+            //select random direction while prioritizing the direction of dirt tiles
+            var randomIndexGenerator = new WeightedRandomNumberGenerator();
+            for (int i = 0; i < validDirections.Length; i++) {
+                Vector2 targetLocation = validDirections[i] + Position;
+                Tile tile = farm.map[targetLocation.x, targetLocation.y];
+                int interestLevel = tile.Type == Tile.Types.Dirt ? 2 : 1;
+                randomIndexGenerator.AddNumber(i, interestLevel);
+            }
+            Vector2 selectedDirection = validDirections[randomIndexGenerator.Generate()];
 
             //act
             this.Dig(selectedDirection, farm);
