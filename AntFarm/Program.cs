@@ -5,10 +5,9 @@ namespace AntFarm {
 
         static void Main(string[] args) {
             var (cursorOriginLeft, cursorOriginTop) = Console.GetCursorPosition();
-            Console.CursorVisible = false;
 
             //initialize farm
-            IFarm farm = new AntFarm.Examples.AimlessWalkers.Farm(4, 70, 18);
+            IFarm farm = new AntFarm.Examples.AimlessWalkers.Farm(1, 70, 18);
             var displayer = new ConsoleFarmDisplayer(cursorOriginLeft, cursorOriginTop);
 
             //start logic loop
