@@ -26,6 +26,7 @@ namespace AntFarm.Examples.AimlessWalkers {
             get => tiles[new Vector2(x, y)];
             set => tiles[new Vector2(x, y)] = value;
         }
+        public Tile this[Vector2 vec] => this[vec.x, vec.y];
 
         public IEnumerable<Tile> GetAllTiles() => tiles.Values;
         public bool LocationExists(Vector2 position) => tiles.ContainsKey(position);

@@ -7,11 +7,12 @@ namespace AntFarm {
             //todo
             //use builder pattern to create console displayer commands
             //use strategy pattern to handle ant actions
+            //write unit test to test the weighted rng
 
             var (cursorOriginLeft, cursorOriginTop) = Console.GetCursorPosition();
 
             //initialize farm
-            IFarm farm = new AntFarm.Examples.AimlessWalkers.Farm(10, 230, 60);
+            IFarm farm = new AntFarm.Examples.AimlessWalkers.Farm(1, 230, 60);
             var displayer = new ConsoleFarmDisplayer(cursorOriginLeft, cursorOriginTop);
 
             //start logic loop
@@ -19,7 +20,7 @@ namespace AntFarm {
                 farm.Update();
                 var displayCommands = ConsoleDisplayerCommandListFactory.Create(farm);
                 displayer.Display(displayCommands);
-                Thread.Sleep(500);
+                Thread.Sleep(10);
             }
         }
     }

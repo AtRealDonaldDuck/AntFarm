@@ -25,7 +25,7 @@ namespace AntFarm.Examples.AimlessWalkers {
             for (int i = 0; i < validDirections.Length; i++) {
                 Vector2 targetLocation = validDirections[i] + Position;
                 Tile tile = farm.map[targetLocation.x, targetLocation.y];
-                int interestLevel = tile.Type == Tile.Types.Dirt ? 2 : 1;
+                int interestLevel = tile.Type == Tile.Types.Dirt ? 100 : 1;
                 randomIndexGenerator.AddNumber(i, interestLevel);
             }
             Vector2 selectedDirection = validDirections[randomIndexGenerator.Generate()];
