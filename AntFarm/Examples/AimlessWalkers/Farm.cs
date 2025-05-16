@@ -16,8 +16,14 @@ namespace AntFarm.Examples.AimlessWalkers {
 
         public void Update() {
             //update ants
+
+            //foreach (var ant in ants)
+            //    ant.Act(this);
+
+            var tasks = new List<Task>();
             foreach (var ant in ants)
-                ant.Act(this);
+                tasks.Add(Task.Run(() => ant.Act(this)));
+            Task.WaitAll(tasks.ToArray());
         }
         Ant[] CreateAnts(int count) {
             var antList = new List<Ant>();
